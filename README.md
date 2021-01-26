@@ -23,6 +23,7 @@
 
 ![image](https://user-images.githubusercontent.com/54719289/105633807-d22e3300-5e80-11eb-8322-8a5001bcdc31.png)
 
+			
       
     - 	sudo dnf repolist -v
 		- 	dnf list docker-ce --showduplicates | sort -r
@@ -48,6 +49,14 @@
 		Test docker:
 			sudo docker run --rm --name=linuxconfig-test -p 80:80 httpd
 
+
+
+
+wget https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-cli-19.03.1-3.el7.x86_64.rpm
+yum install container-selinux containerd.io docker-ce-cli iptables libcgroup
+rpm -ivh docker-ce-19.03.9-3.el7.x86_64.rpm
+service docker start
+service docker status
 
 #	dockerize java
 		- sample docker file for java with existing image
