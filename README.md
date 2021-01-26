@@ -23,7 +23,7 @@
 	
    	 	1  sudo yum install -y yum-utils
 		
-    		2  sudo yum-config-manager     --add-repo     https://download.docker.com/linux/centos/docker-ce.repo
+    	        2  sudo yum-config-manager     --add-repo     https://download.docker.com/linux/centos/docker-ce.repo
     		
 		3  yum list docker-ce --showduplicates | sort -r
     		
@@ -34,6 +34,7 @@
 		6  rpm -qa | grep docker
     		
 		7  service docker start
+		
 ![image](https://user-images.githubusercontent.com/54719289/105912370-64853100-6051-11eb-9cab-94d5060c5a83.png)
 		
 		8  service docker stop
