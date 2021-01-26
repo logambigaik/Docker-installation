@@ -19,44 +19,21 @@
 	
 		
 #	Install docker on RHEL
-		- 	sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+	
+	
+   	 	1  sudo yum install -y yum-utils
+    		2  sudo yum-config-manager     --add-repo     https://download.docker.com/linux/centos/docker-ce.repo
+    		3  yum list docker-ce --showduplicates | sort -r
+    		4  yum list docker-ce-cli --showduplicates | sort -r
+    		5  sudo yum install docker-ce-19.03.13-3.el8.x86_64  docker-ce-cli-19.03.13-3.el8.x86_64 containerd.io
+    		6  rpm -qa | grep docker
+    		7  service docker start
+![image](https://user-images.githubusercontent.com/54719289/105912370-64853100-6051-11eb-9cab-94d5060c5a83.png)
+		8  service docker stop
+    		9  yum install -y container-selinux containerd.io docker-ce-cli-19.03.13-3.el8.x86_64 iptables libcgroup
+		10 service docker start
+![image](https://user-images.githubusercontent.com/54719289/105912495-8e3e5800-6051-11eb-9e6b-6f04831b5a8f.png)
 
-![image](https://user-images.githubusercontent.com/54719289/105633807-d22e3300-5e80-11eb-8322-8a5001bcdc31.png)
-
-			
-      
-    - 	sudo dnf repolist -v
-		- 	dnf list docker-ce --showduplicates | sort -r
-		-	sudo dnf install docker-ce-3:18.09.1-3.el7
-		-	sudo dnf install --nobest docker-ce
-		
-		Install the latest available containerd.io package manually
-			-	sudo dnf install https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm
-			-	sudo dnf install docker-ce
-			-	sudo systemctl disable firewalld
-			-	sudo systemctl enable --now docker
-			-	systemctl is-active docker
-			-	systemctl is-enabled docker
-		Instaling docker-compose:
-			-	curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o docker-compose
-				Once the binary is downloaded, we move it into /usr/local/bin and we make it executable:
-			-	 sudo mv docker-compose /usr/local/bin && sudo chmod +x /usr/local/bin/docker-compose
-			
-		Per-user installation
-			sudo dnf install python3-pip
-			pip3.6 install docker-compose --user
-		
-		Test docker:
-			sudo docker run --rm --name=linuxconfig-test -p 80:80 httpd
-
-
-
-
-wget https://download.docker.com/linux/centos/7/x86_64/stable/Packages/docker-ce-cli-19.03.1-3.el7.x86_64.rpm
-yum install container-selinux containerd.io docker-ce-cli iptables libcgroup
-rpm -ivh docker-ce-19.03.9-3.el7.x86_64.rpm
-service docker start
-service docker status
 
 #	dockerize java
 		- sample docker file for java with existing image
