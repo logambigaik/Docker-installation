@@ -21,27 +21,27 @@
 #	Install docker on RHEL
 	
 	
-   	 	1  sudo yum install -y yum-utils
+   	 	-	sudo yum install -y yum-utils
 		
-    	        2  sudo yum-config-manager     --add-repo     https://download.docker.com/linux/centos/docker-ce.repo
+    	        -	sudo yum-config-manager     --add-repo     https://download.docker.com/linux/centos/docker-ce.repo
     		
-		3  yum list docker-ce --showduplicates | sort -r
+		-	yum list docker-ce --showduplicates | sort -r
     		
-		4  yum list docker-ce-cli --showduplicates | sort -r
+		-	yum list docker-ce-cli --showduplicates | sort -r
     		
-		5  sudo yum install docker-ce-19.03.13-3.el8.x86_64  docker-ce-cli-19.03.13-3.el8.x86_64 containerd.io
+		-	sudo yum install docker-ce-19.03.13-3.el8.x86_64  docker-ce-cli-19.03.13-3.el8.x86_64 containerd.io
     		
-		6  rpm -qa | grep docker
+		-	rpm -qa | grep docker
     		
-		7  service docker start
+		-	service docker start
 		
 ![image](https://user-images.githubusercontent.com/54719289/105912370-64853100-6051-11eb-9cab-94d5060c5a83.png)
 		
-		8  service docker stop
+		-	service docker stop
     		
-		9  yum install -y container-selinux containerd.io docker-ce-cli-19.03.13-3.el8.x86_64 iptables libcgroup
+		-	yum install -y container-selinux containerd.io docker-ce-cli-19.03.13-3.el8.x86_64 iptables libcgroup
 		
-		10 service docker start
+		-	service docker start
 
 ![image](https://user-images.githubusercontent.com/54719289/105912495-8e3e5800-6051-11eb-9e6b-6f04831b5a8f.png)
 
