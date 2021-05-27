@@ -3,7 +3,7 @@
 #	Install docker on amazon linux/amazon linux 2
 		-	yum install -y docker 
 		-	service docker start
-	or
+	                  or
 		-	amazon-linux-extras install docker -y
 		-	rpm -qa | grep docker
 		-	service docker start
